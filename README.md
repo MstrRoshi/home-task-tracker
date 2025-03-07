@@ -4,8 +4,7 @@ A mobile-optimized application for tracking tasks in a household. This applicati
 
 ## Features
 
-- **User Authentication**: Sign in with Google account
-- **Mock Authentication**: Alternative authentication system for development
+- **Mock Authentication**: Simple authentication system for development
 - **Task Management**: Create, view, and complete household tasks
 - **Task Categories**: Organize tasks by frequency (daily, weekly, monthly)
 - **User Assignment**: Assign tasks to specific household members
@@ -20,7 +19,6 @@ A mobile-optimized application for tracking tasks in a household. This applicati
 - **Tailwind CSS**: For styling the application
 - **Shadcn UI**: Component library built on top of Tailwind CSS
 - **Radix UI**: Accessible UI primitives
-- **NextAuth.js**: For authentication with Google
 - **Socket.IO**: For real-time communication between clients
 - **date-fns**: For date formatting and manipulation
 
@@ -30,7 +28,6 @@ A mobile-optimized application for tracking tasks in a household. This applicati
 
 - Node.js (v14 or later)
 - npm or yarn
-- Google OAuth credentials (for authentication)
 
 ### Installation
 
@@ -49,47 +46,18 @@ A mobile-optimized application for tracking tasks in a household. This applicati
    ```
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application
 
-## Authentication Options
+## Authentication
 
-### Option 1: Mock Authentication (No Setup Required)
-
-For development and testing without setting up Google OAuth:
+The application uses a simple mock authentication system for development purposes:
 
 1. Start the application
-2. Navigate to [http://localhost:3000](http://localhost:3000) and select "Mock Authentication Version"
-3. Use the mock sign-in button to simulate authentication
-
-For more details, see [MOCK_AUTH_GUIDE.md](./MOCK_AUTH_GUIDE.md).
-
-### Option 2: Google OAuth Authentication
-
-For full Google authentication functionality:
-
-1. Follow the setup instructions in [GOOGLE_SSO_SETUP.md](./GOOGLE_SSO_SETUP.md)
-2. Create a `.env.local` file with your Google OAuth credentials
-3. Start the application and select "Main Application (Google Auth)"
-
-### Setting up Google OAuth
-
-1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select an existing one
-3. Navigate to "APIs & Services" > "Credentials"
-4. Click "Create Credentials" > "OAuth client ID"
-5. Select "Web application" as the application type
-6. Add "http://localhost:3000" to the Authorized JavaScript origins
-7. Add "http://localhost:3000/api/auth/callback/google" to the Authorized redirect URIs
-8. Click "Create" and note your Client ID and Client Secret
-9. Create a `.env.local` file in the root directory with the following variables:
-   ```
-   NEXTAUTH_URL=http://localhost:3000
-   NEXTAUTH_SECRET=your-random-secret-key
-   GOOGLE_CLIENT_ID=your-google-client-id
-   GOOGLE_CLIENT_SECRET=your-google-client-secret
-   ```
+2. Navigate to [http://localhost:3000](http://localhost:3000)
+3. Use the sign-in button to authenticate
+4. You'll be logged in as a mock user with predefined credentials
 
 ## Usage
 
-- **Sign In**: Use your Google account or the mock authentication to sign in
+- **Sign In**: Use the mock authentication to sign in
 - **View Tasks**: Tasks are organized by frequency (daily, weekly, monthly) in separate tabs
 - **Filter Tasks**: Use the user filter buttons at the top to view tasks assigned to specific users
 - **Complete Tasks**: Check the checkbox on a task card to mark it as complete

@@ -45,12 +45,7 @@ Vercel is the platform created by the team behind Next.js and offers the simples
 
 ### Post-Deployment Configuration
 
-1. Update your Google OAuth credentials:
-   - Go to the [Google Cloud Console](https://console.cloud.google.com/)
-   - Add your production URL to the Authorized JavaScript origins
-   - Add `https://your-app.vercel.app/api/auth/callback/google` to the Authorized redirect URIs
-
-2. Test the application:
+1. Test the application:
    - Visit your deployed URL
    - Verify that authentication works
    - Test real-time functionality by opening the app in multiple browsers
@@ -133,9 +128,9 @@ If you're experiencing issues with Socket.IO connections:
 
 If authentication is not working:
 
-1. Verify that your Google OAuth credentials are correctly set up for your production URL
-2. Check that all required environment variables are set
-3. Ensure your callback URLs are correctly configured
+1. Check that the mock authentication system is properly initialized
+2. Verify that the SessionProvider is correctly set up in your layout
+3. Check browser console for any errors
 
 ### General Deployment Issues
 

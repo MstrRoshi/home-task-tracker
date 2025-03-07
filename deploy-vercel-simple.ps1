@@ -84,8 +84,6 @@ if ($deployOption -eq "1") {
         }
         
         $nextauthSecret = Read-Host "Enter NEXTAUTH_SECRET"
-        $googleClientId = Read-Host "Enter GOOGLE_CLIENT_ID"
-        $googleClientSecret = Read-Host "Enter GOOGLE_CLIENT_SECRET"
         
         Write-Host ""
         Write-Host "Running Vercel deployment with environment variables..." -ForegroundColor Green
@@ -94,8 +92,6 @@ if ($deployOption -eq "1") {
         $envContent = @"
 NEXTAUTH_URL=$nextauthUrl
 NEXTAUTH_SECRET=$nextauthSecret
-GOOGLE_CLIENT_ID=$googleClientId
-GOOGLE_CLIENT_SECRET=$googleClientSecret
 "@
         
         $envFile = ".env.vercel.local"
@@ -167,15 +163,11 @@ GOOGLE_CLIENT_SECRET=$googleClientSecret
         }
         
         $nextauthSecret = Read-Host "Enter NEXTAUTH_SECRET"
-        $googleClientId = Read-Host "Enter GOOGLE_CLIENT_ID"
-        $googleClientSecret = Read-Host "Enter GOOGLE_CLIENT_SECRET"
         
         Write-Host ""
         Write-Host "Setting environment variables..." -ForegroundColor Green
         vercel env add NEXTAUTH_URL production
         vercel env add NEXTAUTH_SECRET production
-        vercel env add GOOGLE_CLIENT_ID production
-        vercel env add GOOGLE_CLIENT_SECRET production
     }
     
     Write-Host ""
