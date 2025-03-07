@@ -113,21 +113,30 @@ The application can be deployed to various platforms. For detailed deployment in
 ### Quick Deployment Options
 
 1. **Vercel (Recommended)**
-   - Push your code to a Git repository
-   - Import the repository in the Vercel dashboard
-   - Configure environment variables
-   - Deploy
+   - Run `deploy.bat` and select option 1
+   - Follow the prompts to deploy to Vercel
+   - Set up the required environment variables:
+     - NEXTAUTH_URL: Your Vercel deployment URL
+     - NEXTAUTH_SECRET: A secure random string
+     - GOOGLE_CLIENT_ID: Your Google OAuth client ID
+     - GOOGLE_CLIENT_SECRET: Your Google OAuth client secret
 
-2. **Railway**
-   - Create a Railway account
-   - Connect your repository
-   - Set up environment variables
-   - Deploy
+2. **GitHub**
+   - Run `deploy.bat` and select option 2
+   - Follow the prompts to push your code to GitHub
+   - Create a repository on GitHub before running the script
 
-3. **Heroku**
-   - Create a Heroku app
-   - Set up environment variables
-   - Push your code to Heroku
+### Manual Deployment to Vercel
+
+1. Go to the [Vercel Dashboard](https://vercel.com/dashboard)
+2. Import your GitHub repository
+3. Configure the project:
+   - Framework Preset: Next.js
+   - Root Directory: ./
+   - Build Command: next build
+   - Output Directory: .next
+4. Set up environment variables
+5. Deploy
 
 ## License
 
